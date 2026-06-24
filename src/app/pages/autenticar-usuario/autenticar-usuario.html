@@ -27,17 +27,17 @@
                         </p>
                     </div>
 
-                    <form>
+                    <form [formGroup]="formAutenticar" (ngSubmit)="autenticar()">
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail</label>
                             <input type="email" class="form-control form-control-lg" id="email" name="email"
-                                placeholder="seuemail@exemplo.com" />
+                                placeholder="seuemail@exemplo.com" formControlName="email" />
                         </div>
 
                         <div class="mb-4">
                             <label for="senha" class="form-label">Senha</label>
                             <input type="password" class="form-control form-control-lg" id="senha" name="senha"
-                                placeholder="Digite sua senha" />
+                                placeholder="Digite sua senha" formControlName="senha" />
                         </div>
 
                         <div class="d-grid mb-3">
