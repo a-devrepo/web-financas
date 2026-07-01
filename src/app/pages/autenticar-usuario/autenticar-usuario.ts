@@ -32,7 +32,7 @@ export class AutenticarUsuario {
 
   autenticar() {
 
-    this.mensagemErro
+    this.mensagemErro.set('');
 
     this.httpClient.post(this.URL + "autenticar", this.formAutenticar.value)
     .subscribe({
