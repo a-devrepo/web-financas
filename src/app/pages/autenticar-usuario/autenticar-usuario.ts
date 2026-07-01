@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autenticar-usuario',
@@ -19,20 +20,31 @@ export class AutenticarUsuario {
 
   private URL = "http://localhost:8082/api/v1/usuarios/";
 
+  private router = inject(Router);
+
+  mensagemErro = signal<string>('');
+
+
   formAutenticar = new FormGroup({
     email: new FormControl('', [Validators.required]),
     senha: new FormControl('', [Validators.required]),
   });
 
   autenticar() {
+
+    this.mensagemErro
+
     this.httpClient.post(this.URL + "autenticar", this.formAutenticar.value)
     .subscribe({
-      next: (resposta) => {
-        console.log(resposta);
+      next: (response: any) => {
+        sessionStorage.setItem("auth", JSON.stringify(response));
+        this.router.navigate(['pages/dashboard']);
       },
-      error: (erro) => {
-        console.error(erro);
+      error: (e) => {
+        this.mensagemErro.set('Erro: ' + e.error);   
       }
     });
   }
+
+
 }
