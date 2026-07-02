@@ -33,7 +33,7 @@ export class CriarUsuario {
 
   criarUsuario() {
 
-    this.limparMensagens
+    this.limparMensagens();
 
     const json = {
       nome: this.formCriarUsuario.value.nome,
@@ -53,7 +53,7 @@ export class CriarUsuario {
       })
   }
 
-  validarSenhasIguais(control: AbstractControl): ValidationErrors | null{
+  private validarSenhasIguais(control: AbstractControl): ValidationErrors | null{
     const valorSernha = control.get('senha')?.value;
     const valorSernhaConfirmacao = control.get('senhaConfirmacao')?.value;
 
@@ -63,7 +63,7 @@ export class CriarUsuario {
     return null;
   }
 
-  limparMensagens() {
+  private limparMensagens() {
     this.mensagemSucesso.set('');
     this.mensagemErro.set('');
   }
