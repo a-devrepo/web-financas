@@ -1,59 +1,40 @@
-# WebFinancas
+# Web Finanças
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+Aplicação web desenvolvida com **Angular 21** para gerenciamento de finanças pessoais.
 
-## Development server
+Atualmente o projeto possui funcionalidades para:
 
-To start a local development server, run:
+* Cadastro de usuários
+* Autenticação de usuários
+* Integração com uma API REST desenvolvida em Spring Boot
 
-```bash
-ng serve
-```
+O projeto utiliza **Bootstrap** para estilização da interface, proporcionando um layout responsivo e organizado.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Tecnologias
 
-## Code scaffolding
+* Angular 21
+* TypeScript
+* Bootstrap
+* HTML
+* CSS
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Integração com a API
 
-```bash
-ng generate component component-name
-```
+O frontend consome a API REST responsável pelo gerenciamento de usuários.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Repositório da API:
 
-```bash
-ng generate --help
-```
+* https://github.com/a-devrepo/users-api
 
-## Building
+## Estrutura atual
 
-To build the project run:
+* Cadastro de contas
+* Login de usuários
 
-```bash
-ng build
-```
+## Próximas funcionalidades
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+As próximas etapas do projeto incluem a implementação do componente **Dashboard**, que concentrará as funcionalidades de gerenciamento financeiro dos usuários.
 
-## Running unit tests
+## Objetivo
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto foi desenvolvido para fins de estudo, com o objetivo de praticar o desenvolvimento de aplicações frontend utilizando Angular, integração com APIs REST e construção de interfaces modernas utilizando Bootstrap.
