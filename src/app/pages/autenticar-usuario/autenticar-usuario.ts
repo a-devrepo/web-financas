@@ -24,7 +24,6 @@ export class AutenticarUsuario {
 
   mensagemErro = signal<string>('');
 
-
   formAutenticar = new FormGroup({
     email: new FormControl('', [Validators.required]),
     senha: new FormControl('', [Validators.required]),
@@ -35,16 +34,14 @@ export class AutenticarUsuario {
     this.mensagemErro.set('');
 
     this.httpClient.post(this.URL + "autenticar", this.formAutenticar.value)
-    .subscribe({
-      next: (response: any) => {
-        sessionStorage.setItem("auth", JSON.stringify(response));
-        this.router.navigate(['pages/dashboard']);
-      },
-      error: (e) => {
-        this.mensagemErro.set('Erro: ' + e.error);   
-      }
-    });
+      .subscribe({
+        next: (response: any) => {
+          sessionStorage.setItem("auth", JSON.stringify(response));
+          this.router.navigate(['pages/dashboard']);
+        },
+        error: (e) => {
+          this.mensagemErro.set('Erro: ' + e.error);
+        }
+      });
   }
-
-
 }
